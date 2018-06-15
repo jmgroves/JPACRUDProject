@@ -19,6 +19,7 @@
 <body>
 <h2>Car ID: ${car.id }</h2>
 <form action="updateCarDetails.do" method=POST>
+<div>
 Year: <input type="text" name="year" value="${car.year}"><br>
 Make: <input type="text" name="make" value="${car.make}"><br>
 Model: <input type="text" name="model" value="${car.model}"><br>
@@ -30,5 +31,6 @@ Drive Train: <input type="text" name="drive" value="${car.drive}"><br>
 	</form>
 
  <br><br>
+ </div>
 </body>
 </html>

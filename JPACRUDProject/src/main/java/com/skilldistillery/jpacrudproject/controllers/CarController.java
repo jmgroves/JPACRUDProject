@@ -66,39 +66,40 @@ public class CarController {
 	public ModelAndView addCar(Car car, RedirectAttributes redir) throws SQLException {
 		ModelAndView mv = new ModelAndView();
 		Car newCar = carDAO.create(car);
-		//mv.addObject("car", newCar);
+		// mv.addObject("car", newCar);
 		boolean added;
 		if (newCar == null) {
 			added = false;
 		} else {
 			added = true;
 		}
-		//mv.addObject("added", added);
+		// mv.addObject("added", added);
 		redir.addFlashAttribute("added", added);
 		mv.setViewName("redirect:index.do");
 		return mv;
 	}
-	@RequestMapping(path="updateCar.do", method=RequestMethod.GET, name ="updateFilm")
+
+	@RequestMapping(path = "updateCar.do", method = RequestMethod.GET, name = "updateFilm")
 	public ModelAndView updateFilm(@RequestParam("carId") int cid) {
-	    ModelAndView mv = new ModelAndView();
+		ModelAndView mv = new ModelAndView();
 		Car c = carDAO.show(cid);
 		mv.addObject("car", c);
 		mv.setViewName("/WEB-INF/updatecar.jsp");
 		return mv;
-	  }
-	
-	  @RequestMapping(path = "updateCarDetails.do", method = RequestMethod.POST)
-	    public ModelAndView updateFilmDetails(@RequestParam(name = "carId") int carId, Car car) throws SQLException {
-	        ModelAndView mv = new ModelAndView();
-	        boolean updated = false;
-	        car = carDAO.update(carId, car);
-	        if(car != null) {
-	        	updated = true;
-	        } 
-	        mv.addObject("updated", updated);
-	        mv.addObject("car", car);
-	        mv.setViewName("WEB-INF/show.jsp");
-	        return mv;
-	    }
+	}
+
+	@RequestMapping(path = "updateCarDetails.do", method = RequestMethod.POST)
+	public ModelAndView updateFilmDetails(@RequestParam(name = "carId") int carId, Car car) throws SQLException {
+		ModelAndView mv = new ModelAndView();
+		boolean updated = false;
+		car = carDAO.update(carId, car);
+		if (car != null) {
+			updated = true;
+		}
+		mv.addObject("updated", updated);
+		mv.addObject("car", car);
+		mv.setViewName("WEB-INF/show.jsp");
+		return mv;
+	}
 
 }

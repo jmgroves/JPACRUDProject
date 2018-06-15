@@ -23,9 +23,9 @@
 
 
 <div>
-  <h5>${car.year} <p>${car.make}</p>
-  <p>${car.model}</p></h5>
-  <p>${car.color}</p>
+  <h5>Year: ${car.year} <p>Make: ${car.make}</p>
+  <p>Model: ${car.model}</p></h5>
+  <p>Color: ${car.color}</p>
   <p>Drive Train: ${car.drive }</p>
 </div>
 			<form action="updateCar.do" method="GET">
