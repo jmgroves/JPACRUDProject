@@ -90,12 +90,12 @@ public class CarController {
 	  @RequestMapping(path = "updateCarDetails.do", method = RequestMethod.POST)
 	    public ModelAndView updateFilmDetails(@RequestParam(name = "carId") int carId, Car car) throws SQLException {
 	        ModelAndView mv = new ModelAndView();
-	        boolean added = false;
+	        boolean updated = false;
 	        car = carDAO.update(carId, car);
 	        if(car != null) {
-	        	added = true;
+	        	updated = true;
 	        } 
-	        mv.addObject("added", added);
+	        mv.addObject("updated", updated);
 	        mv.addObject("car", car);
 	        mv.setViewName("WEB-INF/show.jsp");
 	        return mv;
