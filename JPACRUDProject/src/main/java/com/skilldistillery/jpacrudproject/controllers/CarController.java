@@ -21,7 +21,7 @@ public class CarController {
 	private CarDAO carDAO;
 
 	@RequestMapping(path = "getCar.do", method = RequestMethod.GET)
-	public ModelAndView getFilm(@RequestParam("cid") int cid) {
+	public ModelAndView getCar(@RequestParam("cid") int cid) {
 		ModelAndView mv = new ModelAndView();
 
 		Car car = carDAO.show(cid);
@@ -78,5 +78,27 @@ public class CarController {
 		mv.setViewName("redirect:index.do");
 		return mv;
 	}
+	@RequestMapping(path="updateCar.do", method=RequestMethod.GET, name ="updateFilm")
+	public ModelAndView updateFilm(@RequestParam("carId") int cid) {
+	    ModelAndView mv = new ModelAndView();
+		Car c = carDAO.show(cid);
+		mv.addObject("car", c);
+		mv.setViewName("/WEB-INF/updatecar.jsp");
+		return mv;
+	  }
+	
+	  @RequestMapping(path = "updateCarDetails.do", method = RequestMethod.POST)
+	    public ModelAndView updateFilmDetails(@RequestParam(name = "carId") int carId, Car car) throws SQLException {
+	        ModelAndView mv = new ModelAndView();
+	        boolean added = false;
+	        car = carDAO.update(carId, car);
+	        if(car != null) {
+	        	added = true;
+	        } 
+	        mv.addObject("added", added);
+	        mv.addObject("car", car);
+	        mv.setViewName("WEB-INF/show.jsp");
+	        return mv;
+	    }
 
 }

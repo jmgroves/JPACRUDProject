@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
@@ -17,6 +17,10 @@
 <title>Car Info</title>
 </head>
 <body>
+<c:if test="${updated == true }">Your car has been successfully updated</c:if>
+<c:if test="${updated == false }">Your car not been updated</c:if>
+
+
 
 <div>
   <h5>${car.year} <p>${car.make}</p>
@@ -32,5 +36,9 @@
 				<input type="submit" value="Delete" name="" /><br /> <input
 					type="hidden" name="carId" value="${car.id}" />
 			</form>
+			
+				<div>
+		<a href="index.do">Home</a>
+	</div>
 </body>
 </html>

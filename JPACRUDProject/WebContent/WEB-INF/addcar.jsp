@@ -28,7 +28,7 @@ Model: <input type="text" name="model" value="${car.model}"><br>
 Color: <input type="text" name="color" value="${car.color}"><br>
 Drive: <input type="text" name="drive" value="${car.drive}"><br>
 	<input type="submit" value="Add Car" />
-	<input type="hidden" name="carId" value="${car.id}" />
+	<input type="hidden" name="cid" value="${car.id}" />
 	</form>
 	<div>
 		<a href="index.do">Home</a>

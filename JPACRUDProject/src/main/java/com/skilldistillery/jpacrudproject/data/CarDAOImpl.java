@@ -36,7 +36,6 @@ public class CarDAOImpl implements CarDAO {
 
 	@Override
 	public Car update(int id, Car car) {
-		em.getTransaction().begin();
 
 		Car managed = em.find(Car.class, id);
 		managed.setMake(car.getMake());
@@ -47,7 +46,6 @@ public class CarDAOImpl implements CarDAO {
 
 		em.flush();
 
-		em.getTransaction().commit();
 
 		return managed;
 	}

@@ -17,13 +17,16 @@
 <title>Update Car</title>
 </head>
 <body>
-<h2>Actor ID: ${actor.id }</h2>
-<form action="updateActor.do" method=GET>
-First Name: <input type="text" name="firstName" value="${actor.firstName}"><br>
-Last Name: <input type="text" name="lastName" value="${actor.lastName}"><br>
-	 <input type="hidden" name="actorID" value="${actor.id}" />
-	 <input type="hidden" name="actor" value="${actor}" />
-	<input type="submit" value="Update Actor" /> 
+<h2>Car ID: ${car.id }</h2>
+<form action="updateCarDetails.do" method=POST>
+Year: <input type="text" name="year" value="${car.year}"><br>
+Make: <input type="text" name="make" value="${car.make}"><br>
+Model: <input type="text" name="model" value="${car.model}"><br>
+Color: <input type="text" name="color" value="${car.color}"><br>
+Drive Train: <input type="text" name="drive" value="${car.drive}"><br>
+	 <input type="hidden" name="carId" value="${car.id}" />
+	 <input type="hidden" name="car" value="${car}" />
+	<input type="submit" value="Update Car" /> 
 	</form>
 
  <br><br>
