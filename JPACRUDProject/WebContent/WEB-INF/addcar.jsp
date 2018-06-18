@@ -19,6 +19,12 @@
 
 <title>Add Car To Database</title>
 </head>
+<style type="text/css">
+  body {
+   margin: 20px;
+  }
+
+</style>
 <body>
 <h1>Enter the information of the car you would like to add.</h1>
 <form action="addingCar.do" method="POST">

@@ -17,12 +17,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Car Index</title>
 </head>
+<style type="text/css">
+  body {
+   margin: 20px;
+  }
+
+</style>
 <body>
 
+
+
 <c:if test="${deleted == true }">Your car has been successfully deleted</c:if>
-<c:if test="${deleted == false }">Your car not been deleted</c:if>
+<c:if test="${deleted == false }">Your car has not been deleted</c:if>
 <c:if test="${added == true }">Your car has been successfully added</c:if>
-<c:if test="${added == false }">Your car not been added</c:if>
+<c:if test="${added == false }">Your car has not been added</c:if>
 
 
 <form action="getCar.do" method="GET">
@@ -31,7 +39,7 @@
 </form><br>
 <form action="addCar.do" method="GET">
   <input type="submit" value="Add Car"/>
-</form>
+</form><br><br>   
 
 
 <c:forEach items="${cars}" var="car">
@@ -45,5 +53,8 @@
 </c:forEach>
 
 
+<form action="breakout.do" method="GET">
+  <input type="submit" value="Breakout!"/>
+</form>
 </body>
 </html>

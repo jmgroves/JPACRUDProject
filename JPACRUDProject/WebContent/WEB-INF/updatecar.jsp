@@ -16,6 +16,12 @@
 
 <title>Update Car</title>
 </head>
+<style type="text/css">
+  body {
+   margin: 20px;
+  }
+
+</style>
 <body>
 <h2>Car ID: ${car.id }</h2>
 <form action="updateCarDetails.do" method=POST>

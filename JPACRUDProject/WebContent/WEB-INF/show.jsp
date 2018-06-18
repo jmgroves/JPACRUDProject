@@ -16,17 +16,23 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Car Info</title>
 </head>
+<style type="text/css">
+  body {
+   margin: 20px;
+  }
+
+</style>
 <body>
-<c:if test="${updated == true }">Your car has been successfully updated</c:if>
-<c:if test="${updated == false }">Your car not been updated</c:if>
+<c:if test="${updated == true }"><h3>Your car has been successfully updated</h3></c:if>
+<c:if test="${updated == false }"><h3>Your car not been updated</h3></c:if>
 
 
 
 <div>
-  <h5>Year: ${car.year} <p>Make: ${car.make}</p>
-  <p>Model: ${car.model}</p></h5>
+  <h2>Year: ${car.year} <p>Make: ${car.make}</p>
+  <p>Model: ${car.model}</p>
   <p>Color: ${car.color}</p>
-  <p>Drive Train: ${car.drive }</p>
+  <p>Drive Train: ${car.drive }</p></h2>
 </div>
 			<form action="updateCar.do" method="GET">
 				<input type="submit" value="Update" name="" /><br /> <input

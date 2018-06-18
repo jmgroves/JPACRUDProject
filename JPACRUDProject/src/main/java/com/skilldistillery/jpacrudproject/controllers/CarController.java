@@ -42,6 +42,13 @@ public class CarController {
 		mv.setViewName("WEB-INF/index.jsp");
 		return mv;
 	}
+	@RequestMapping(path = "breakout.do", method = RequestMethod.GET)
+	public ModelAndView breakout() {
+		ModelAndView mv = new ModelAndView();
+		
+		mv.setViewName("WEB-INF/breakout.html");
+		return mv;
+	}
 
 	@RequestMapping(path = "deleteCar.do", method = RequestMethod.GET)
 	public ModelAndView deleteCar(@RequestParam("carId") int cid) {
@@ -66,14 +73,12 @@ public class CarController {
 	public ModelAndView addCar(Car car, RedirectAttributes redir) throws SQLException {
 		ModelAndView mv = new ModelAndView();
 		Car newCar = carDAO.create(car);
-		// mv.addObject("car", newCar);
-		boolean added;
+		boolean added = false;
 		if (newCar == null) {
 			added = false;
 		} else {
 			added = true;
 		}
-		// mv.addObject("added", added);
 		redir.addFlashAttribute("added", added);
 		mv.setViewName("redirect:index.do");
 		return mv;
